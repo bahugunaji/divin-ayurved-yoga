@@ -1,0 +1,29 @@
+/* Global styles for Divine Ayurved Yoga */
+
+@layer base {
+  :root {
+    --brand-ink: #1f2937; /* gray-800 */
+    --brand-accent: #111827; /* gray-900 */
+    --brand-bg: #f9fafb; /* gray-50 */
+  }
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background-color: var(--brand-bg);
+  color: var(--brand-ink);
+}
+
+.font-serif {
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.font-sans {
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+
