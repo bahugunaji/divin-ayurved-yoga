@@ -1,0 +1,71 @@
+.class-timing {
+  width: min(1200px, 92%);
+  margin: 50px auto;
+  font-family: "Arial", sans-serif;
+  color: #2f3e2f;
+
+  .header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr 50px;
+    padding: 15px 0;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ddd;
+    color: #666;
+  }
+
+  .class-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr 50px;
+    align-items: center;
+    padding: 25px 0;
+    border-bottom: 1px solid #eee;
+
+    .class-info {
+      h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 0 0 8px;
+      }
+
+      .teacher {
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+
+        span {
+          font-size: 14px;
+          color: #444;
+        }
+      }
+    }
+
+    .class-time,
+    .class-day {
+      p {
+        margin: 4px 0;
+        font-size: 14px;
+      }
+    }
+
+    .arrow {
+      font-size: 20px;
+      text-align: right;
+      color: #333;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .header { display: none; }
+    .class-row { grid-template-columns: 1fr; gap: 12px; }
+    .arrow { display: none; }
+  }
+}
+  
