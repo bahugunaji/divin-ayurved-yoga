@@ -1,4 +1,4 @@
-import { ImgHTMLAttributes, useState } from 'react'
+import { type ImgHTMLAttributes, useState } from 'react'
 
 type Props = ImgHTMLAttributes<HTMLImageElement> & { ratio?: string }
 
