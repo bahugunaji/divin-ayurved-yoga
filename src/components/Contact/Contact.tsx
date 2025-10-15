@@ -35,33 +35,34 @@ const Contact: React.FC = () => {
     })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    const recipient = 'vamikanautiyal@gmail.com'
-    const subject = formData.subject || 'New enquiry from website'
-    const bodyLines = [
-      `Hello,`,
-      '',
-      formData.message,
-      '',
-      '---',
-      `From: ${formData.name || 'Anonymous'}`,
-      formData.email ? `Email: ${formData.email}` : '',
-      formData.phone ? `Phone: ${formData.phone}` : ''
-    ].filter(Boolean)
-    const body = bodyLines.join('\n')
-
-    const mailto = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-    window.location.href = mailto
-
-    setOpenSnackbar(true)
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: ''
-    })
+    try {
+      const res = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      })
+      const data = await res.json()
+      if (!res.ok || !data.ok) {
+        throw new Error(data.error || 'Failed to send email')
+      }
+      if (data.previewUrl) {
+        // Open Ethereal preview when using fallback
+        window.open(data.previewUrl, '_blank', 'noopener,noreferrer')
+      }
+      setOpenSnackbar(true)
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: ''
+      })
+    } catch (err) {
+      alert('Sorry, failed to send your message. Please try again later.')
+      console.error(err)
+    }
   }
 
   const contactInfo = [
