@@ -143,7 +143,7 @@ const Testimonials: React.FC = () => {
             </Grid>
             <Grid item xs={12} sm={4}>
               <Box className="stat-box">
-                <Typography variant="h2" className="stat-number">15+</Typography>
+                <Typography variant="h2" className="stat-number">5+</Typography>
                 <Typography variant="body1" className="stat-label">Years Experience</Typography>
               </Box>
             </Grid>

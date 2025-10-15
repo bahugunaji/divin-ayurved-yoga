@@ -107,7 +107,7 @@
   - Quote icon decoration
 - Statistics banner:
   - 500+ Happy Students
-  - 15+ Years Experience
+  - 5+ Years Experience
   - 4.9/5 Average Rating
 - Hover effects on cards
 
