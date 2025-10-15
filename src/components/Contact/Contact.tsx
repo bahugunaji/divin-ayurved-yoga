@@ -37,10 +37,24 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission logic here
-    console.log('Form submitted:', formData)
+    const recipient = 'vamikanautiyal@gmail.com'
+    const subject = formData.subject || 'New enquiry from website'
+    const bodyLines = [
+      `Hello,`,
+      '',
+      formData.message,
+      '',
+      '---',
+      `From: ${formData.name || 'Anonymous'}`,
+      formData.email ? `Email: ${formData.email}` : '',
+      formData.phone ? `Phone: ${formData.phone}` : ''
+    ].filter(Boolean)
+    const body = bodyLines.join('\n')
+
+    const mailto = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    window.location.href = mailto
+
     setOpenSnackbar(true)
-    // Reset form
     setFormData({
       name: '',
       email: '',
@@ -54,17 +68,17 @@ const Contact: React.FC = () => {
     {
       icon: <LocationOnIcon />,
       title: 'Visit Us',
-      details: ['123 Wellness Avenue', 'Mumbai, Maharashtra 400001', 'India'],
+      details: ['Shree Shakti Yoga Centre', 'Bengali kothi Chowk, Doon University Rd, opp. Mahalaxmi Wedding Point,', 'Dehradun, Uttarakhand 248121 India'],
     },
     {
       icon: <PhoneIcon />,
       title: 'Call Us',
-      details: ['+91 98765 43210', '+91 98765 43211'],
+      details: ['+91 9528194076', ''],
     },
     {
       icon: <EmailIcon />,
       title: 'Email Us',
-      details: ['info@shrishaktiyoga.com', 'classes@shrishaktiyoga.com'],
+      details: ['vamikanautiyal@gmail.com', ''],
     },
     {
       icon: <AccessTimeIcon />,
@@ -178,22 +192,46 @@ const Contact: React.FC = () => {
                       <Typography variant="h6" className="info-title">
                         {info.title}
                       </Typography>
-                      {info.details.map((detail, idx) => (
-                        <Typography key={idx} variant="body2" className="info-text">
-                          {detail}
-                        </Typography>
-                      ))}
+                      {info.details.map((detail, idx) => {
+                        const isEmail = typeof detail === 'string' && detail.includes('@')
+                        return (
+                          <Typography key={idx} variant="body2" className="info-text">
+                            {isEmail ? (
+                              <a href={`mailto:${detail}`} style={{ color: 'inherit', textDecoration: 'underline' }}>
+                                {detail}
+                              </a>
+                            ) : (
+                              detail
+                            )}
+                          </Typography>
+                        )
+                      })}
                     </Box>
                   </CardContent>
                 </Card>
               ))}
 
               <Box className="map-container">
-                <Box className="map-placeholder">
-                  <span className="material-icons map-icon">location_on</span>
-                  <Typography variant="h6">
-                    Find Us on Google Maps
-                  </Typography>
+                <Box className="map-embed">
+                  <iframe
+                    title="Google Map - Shree Shakti Yoga Centre"
+                    src="https://www.google.com/maps?q=30.2823689,78.0400368&hl=en&z=15&output=embed"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    aria-label="Map showing the location of Shree Shakti Yoga Centre"
+                  />
+                </Box>
+                <Box sx={{ textAlign: 'center', padding: '12px' }}>
+                  <Button
+                    href="https://www.google.com/maps/dir//Bengali+kothi+Chowk,+Doon+University+Rd,+opp.+Mahalaxmi+Wedding+Point,+Dehradun,+Uttarakhand+248121/@30.3095709,77.9895755,12.5z/data=!4m8!4m7!1m0!1m5!1m1!1s0x390929002d70d7ed:0x3d53d2ec55be632b!2m2!1d78.0400368!2d30.2823689?entry=ttu&g_ep=EgoyMDI1MTAxMi4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="contained"
+                    color="primary"
+                    endIcon={<SendIcon />}
+                  >
+                    Get Directions
+                  </Button>
                 </Box>
               </Box>
             </Box>

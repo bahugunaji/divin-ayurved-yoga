@@ -4,15 +4,11 @@ import {
   Container, 
   Typography, 
   Grid, 
-  IconButton,
   Link,
   Divider 
 } from '@mui/material'
-import FacebookIcon from '@mui/icons-material/Facebook'
 import InstagramIcon from '@mui/icons-material/Instagram'
-import TwitterIcon from '@mui/icons-material/Twitter'
 import YouTubeIcon from '@mui/icons-material/YouTube'
-import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import PhoneIcon from '@mui/icons-material/Phone'
 import EmailIcon from '@mui/icons-material/Email'
@@ -57,21 +53,21 @@ const Footer: React.FC = () => {
                 Join us on a journey to discover inner peace and holistic wellness.
               </Typography>
               <Box className="social-links">
-                <IconButton className="social-icon" aria-label="Facebook">
-                  <FacebookIcon />
-                </IconButton>
-                <IconButton className="social-icon" aria-label="Instagram">
+                {/* <Link className="social-icon" aria-label="Facebook">
+                  <FacebookIcon  href="" />
+                </Link> */}
+                <Link href="https://www.instagram.com/divineayurvedayoga" target="_blank"className="social-icon" aria-label="Instagram">
                   <InstagramIcon />
-                </IconButton>
-                <IconButton className="social-icon" aria-label="Twitter">
+                </Link>
+                {/* <Link className="social-icon" aria-label="Twitter">
                   <TwitterIcon />
-                </IconButton>
-                <IconButton className="social-icon" aria-label="YouTube">
+                </Link> */}
+                <Link  href="https://www.youtube.com/@DivineAyurvedYoga" target="_blank"className="social-icon" aria-label="YouTube">
                   <YouTubeIcon />
-                </IconButton>
-                <IconButton className="social-icon" aria-label="LinkedIn">
+                </Link>
+                {/* <Link className="social-icon" aria-label="LinkedIn">
                   <LinkedInIcon />
-                </IconButton>
+                </Link> */}
               </Box>
             </Box>
           </Grid>
@@ -120,21 +116,19 @@ const Footer: React.FC = () => {
               <Box className="contact-item">
                 <LocationOnIcon className="contact-icon" />
                 <Typography variant="body2">
-                  123 Wellness Avenue<br />
-                  Mumbai, Maharashtra 400001<br />
-                  India
+                Shree Shakti Yoga Centre <br /> Best yoga Centre in Dehradun <br /> Meditation Centre in Dehardun
                 </Typography>
               </Box>
               <Box className="contact-item">
                 <PhoneIcon className="contact-icon" />
                 <Typography variant="body2">
-                  +91 98765 43210
+                  +91 9528194076
                 </Typography>
               </Box>
               <Box className="contact-item">
                 <EmailIcon className="contact-icon" />
                 <Typography variant="body2">
-                  info@shrishaktiyoga.com
+                  vamikanautiyal@gmail.com
                 </Typography>
               </Box>
             </Box>

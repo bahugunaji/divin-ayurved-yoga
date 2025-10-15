@@ -31,7 +31,8 @@
     .logo-text {
       font-family: $font-heading;
       font-weight: 700;
-      background: linear-gradient(135deg, $primary-color, $secondary-color);
+      // background: linear-gradient(135deg, $primary-color, $secondary-color);
+      background: linear-gradient(to right, rgb(26, 42, 108), rgb(178, 31, 31), rgb(253, 187, 45));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;

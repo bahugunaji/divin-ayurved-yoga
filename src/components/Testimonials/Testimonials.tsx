@@ -15,15 +15,7 @@ import './Testimonials.scss'
 const Testimonials: React.FC = () => {
   const testimonials = [
     {
-      name: 'Anjali Mehta',
-      role: 'Software Engineer',
-      rating: 5,
-      text: 'Shri Shakti Divine Yoga has been a transformative experience for me. The instructors are incredibly knowledgeable and create such a welcoming atmosphere. I\'ve gained not just physical strength, but mental clarity and peace.',
-      initials: 'AM',
-      color: '#b0708c',
-    },
-    {
-      name: 'Vikram Singh',
+      name: 'Charu Bhasin',
       role: 'Business Owner',
       rating: 5,
       text: 'After years of dealing with chronic back pain, I found relief through the yoga classes here. The personalized attention and expert guidance have made all the difference. Highly recommend to anyone seeking wellness.',
@@ -31,10 +23,26 @@ const Testimonials: React.FC = () => {
       color: '#37956d',
     },
     {
-      name: 'Neha Gupta',
-      role: 'Teacher',
+      name: 'Renu Rana',
+      role: 'Software Engineer',
       rating: 5,
-      text: 'The prenatal yoga classes were a blessing during my pregnancy. The instructors were so caring and knowledgeable, helping me stay active and prepare for childbirth. Forever grateful for this community!',
+      text: 'Shri Shakti Divine Yoga has been a transformative experience for me. The instructors are incredibly knowledgeable and create such a welcoming atmosphere. I\'ve gained not just physical strength, but mental clarity and peace.',
+      initials: 'AM',
+      color: '#b0708c',
+    },
+    {
+      name: 'Gagan Bhasin',
+      role: 'Business Owner',
+      rating: 5,
+      text: 'Health and Fitness is the key to success',
+      initials: 'VS',
+      color: '#37956d',
+    },
+    {
+      name: 'Shruti Sharma',
+      role: 'Housewife',
+      rating: 5,
+      text: 'Yoga is the key to success',
       initials: 'NG',
       color: '#dc7729',
     },

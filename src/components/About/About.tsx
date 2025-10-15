@@ -47,7 +47,7 @@ const About: React.FC = () => {
                 <span className="material-icons about-main-icon">spa</span>
                 <Box className="image-overlay">
                   <Typography variant="h4">
-                    15+ Years of Experience
+                    5 Years of Experience
                   </Typography>
                 </Box>
               </Box>

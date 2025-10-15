@@ -12,7 +12,8 @@
       position: relative;
       width: 100%;
       aspect-ratio: 4/3;
-      background: linear-gradient(135deg, $primary-light, $secondary-light);
+      // background: linear-gradient(135deg, $primary-light, $secondary-light);
+      background: linear-gradient(to right, rgb(239, 59, 54), rgb(255, 255, 255));
       border-radius: 20px;
       overflow: hidden;
       box-shadow: $shadow-lg;
