@@ -1,0 +1,163 @@
+@import '../../styles/variables.scss';
+
+.about-section {
+  background-color: $bg-white;
+
+  .about-content {
+    margin-bottom: $spacing-xl;
+  }
+
+  .about-image-container {
+    .about-image {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, $primary-light, $secondary-light);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: $shadow-lg;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .about-main-icon {
+        font-size: 10rem;
+        color: rgba(255, 255, 255, 0.4);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .image-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: $spacing-md;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+        
+        h4 {
+          color: white;
+          font-family: $font-heading;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .about-text {
+    .about-subtitle {
+      color: $primary-color;
+      margin-bottom: $spacing-md;
+      font-weight: 600;
+    }
+
+    .about-description {
+      color: $neutral-gray;
+      margin-bottom: $spacing-md;
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+
+    .about-stats {
+      display: flex;
+      gap: $spacing-lg;
+      margin-top: $spacing-lg;
+      padding-top: $spacing-md;
+      border-top: 2px solid $neutral-light;
+      flex-wrap: wrap;
+
+      .stat-item {
+        text-align: center;
+
+        .stat-number {
+          color: $primary-color;
+          font-family: $font-heading;
+          font-weight: 700;
+          margin-bottom: $spacing-xs;
+        }
+
+        .stat-label {
+          color: $neutral-gray;
+          font-weight: 500;
+          font-size: 0.875rem;
+        }
+      }
+    }
+  }
+
+  .values-section {
+    margin-top: $spacing-xl;
+    padding-top: $spacing-xl;
+    border-top: 1px solid $neutral-light;
+
+    .values-title {
+      text-align: center;
+      color: $primary-color;
+      margin-bottom: $spacing-lg;
+      font-weight: 600;
+    }
+
+    .value-card {
+      background: linear-gradient(135deg, $bg-primary, $bg-secondary);
+      border-radius: 16px;
+      height: 100%;
+      transition: all $transition-normal;
+      border: 1px solid rgba(176, 112, 140, 0.1);
+
+      &:hover {
+        transform: translateY(-8px);
+        box-shadow: $shadow-lg;
+      }
+
+      .MuiCardContent-root {
+        text-align: center;
+        padding: $spacing-md;
+      }
+
+      .value-icon {
+        display: flex;
+        justify-content: center;
+        margin-bottom: $spacing-sm;
+
+        svg {
+          font-size: 3rem;
+          color: $primary-color;
+        }
+      }
+
+      .value-title {
+        color: $neutral-dark;
+        font-family: $font-heading;
+        font-weight: 600;
+        margin-bottom: $spacing-sm;
+        font-size: 1.25rem;
+      }
+
+      .value-description {
+        color: $neutral-gray;
+        line-height: 1.6;
+        font-size: 0.95rem;
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    .about-content {
+      margin-bottom: $spacing-lg;
+    }
+
+    .about-image-container {
+      margin-bottom: $spacing-md;
+    }
+
+    .about-text {
+      .about-stats {
+        justify-content: center;
+        gap: $spacing-md;
+      }
+    }
+  }
+}
+

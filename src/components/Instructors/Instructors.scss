@@ -1,0 +1,189 @@
+@import '../../styles/variables.scss';
+
+.instructors-section {
+  background-color: $bg-white;
+
+  .instructor-card {
+    height: 100%;
+    border-radius: 20px;
+    transition: all $transition-normal;
+    background: linear-gradient(135deg, $bg-primary, $bg-white);
+    border: 2px solid transparent;
+
+    &:hover {
+      transform: translateY(-12px);
+      box-shadow: $shadow-lg;
+      border-color: $primary-light;
+    }
+
+    .instructor-avatar-container {
+      position: relative;
+      padding: $spacing-lg $spacing-md 0;
+      display: flex;
+      justify-content: center;
+
+      .instructor-avatar {
+        position: relative;
+        z-index: 2;
+        box-shadow: $shadow-md;
+        transition: all $transition-normal;
+      }
+
+      .avatar-decoration {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, $primary-light, $secondary-light);
+        opacity: 0.3;
+        z-index: 1;
+      }
+    }
+
+    &:hover .instructor-avatar {
+      transform: scale(1.05);
+    }
+
+    .instructor-content {
+      text-align: center;
+      padding: $spacing-md;
+
+      .instructor-name {
+        font-family: $font-heading;
+        color: $neutral-dark;
+        font-weight: 600;
+        margin-bottom: $spacing-xs;
+        font-size: 1.25rem;
+      }
+
+      .instructor-title {
+        color: $primary-color;
+        font-weight: 500;
+        margin-bottom: $spacing-md;
+        font-size: 0.95rem;
+      }
+
+      .instructor-details {
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 12px;
+        padding: $spacing-sm;
+        margin-bottom: $spacing-md;
+        text-align: left;
+
+        .detail-item {
+          display: flex;
+          gap: $spacing-xs;
+          margin-bottom: $spacing-xs;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          .detail-label {
+            font-weight: 600;
+            color: $neutral-dark;
+            font-size: 0.85rem;
+            min-width: 90px;
+          }
+
+          .detail-value {
+            color: $neutral-gray;
+            font-size: 0.85rem;
+            flex: 1;
+          }
+        }
+      }
+
+      .instructor-bio {
+        color: $neutral-gray;
+        line-height: 1.6;
+        margin-bottom: $spacing-md;
+        font-size: 0.9rem;
+        font-style: italic;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: $spacing-xs;
+        padding-top: $spacing-sm;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+
+        .social-icon {
+          color: $neutral-gray;
+          transition: all $transition-fast;
+
+          &:hover {
+            color: $primary-color;
+            transform: translateY(-2px);
+          }
+
+          svg {
+            font-size: 1.25rem;
+          }
+        }
+      }
+    }
+  }
+
+  .instructors-cta {
+    text-align: center;
+    margin-top: $spacing-xl;
+    padding: $spacing-lg;
+    background: linear-gradient(135deg, $bg-secondary, $bg-primary);
+    border-radius: 20px;
+    box-shadow: $shadow-sm;
+
+    h4 {
+      font-family: $font-heading;
+      color: $secondary-color;
+      margin-bottom: $spacing-sm;
+      font-weight: 600;
+    }
+
+    .MuiTypography-body1 {
+      color: $neutral-gray;
+      margin-bottom: $spacing-md;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-buttons {
+      margin-top: $spacing-md;
+
+      .email-link {
+        display: inline-block;
+        color: $primary-color;
+        font-weight: 600;
+        font-size: 1.125rem;
+        text-decoration: none;
+        padding: 12px 32px;
+        background: white;
+        border-radius: 30px;
+        transition: all $transition-normal;
+        box-shadow: $shadow-sm;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: $shadow-md;
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    .instructor-card {
+      margin-bottom: $spacing-md;
+    }
+
+    .instructors-cta {
+      padding: $spacing-md;
+    }
+  }
+}
+

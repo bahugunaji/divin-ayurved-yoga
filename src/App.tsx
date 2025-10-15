@@ -1,38 +1,27 @@
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import './styles/global.scss';
-import Features from './components/Features';
-import Instructor from './components/Instructor';
-import Gallery from './components/Gallery';
-import Schedule from './components/Schedule';
-import Pricing from './components/Pricing';
-import BlogTeasers from './components/BlogTeasers';
-import SiteFooter from './components/SiteFooter';
-import AdUnit from './components/AdUnit';
-import HeroSlider from './components/HeroSlider';
-import BlogTeasersSlider from './components/BlogTeasersSlider';
-import GalleryCarousel from './components/GalleryCarousel';
-import ContactSection from './components/ContactSection';
-import RetreatSection from './components/RetreatSection';
+import React from 'react'
+import Header from './components/Header/Header'
+import Hero from './components/Hero/Hero'
+import About from './components/About/About'
+import Classes from './components/Classes/Classes'
+import Instructors from './components/Instructors/Instructors'
+import Testimonials from './components/Testimonials/Testimonials'
+import Contact from './components/Contact/Contact'
+import Footer from './components/Footer/Footer'
 
-export default function App() {
+function App() {
   return (
-    <div className="font-sans">
-      <Navbar />
+    <div className="App">
+      <Header />
       <Hero />
-      <HeroSlider />
-      <Features />
-      <Instructor />
-      <Gallery />
-      <GalleryCarousel />
-      <Schedule />
-      <RetreatSection />
-      <Pricing />
-      <BlogTeasers />
-      <BlogTeasersSlider />
-      <ContactSection />
-      <AdUnit className="section my-10" />
-      <SiteFooter />
+      <About />
+      <Classes />
+      <Instructors />
+      <Testimonials />
+      <Contact />
+      <Footer />
     </div>
   )
 }
+
+export default App
+

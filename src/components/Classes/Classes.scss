@@ -1,0 +1,162 @@
+@import '../../styles/variables.scss';
+
+.classes-section {
+  background: linear-gradient(to bottom, $bg-white, $bg-primary);
+
+  .class-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    transition: all $transition-normal;
+    border: 2px solid transparent;
+
+    &:hover {
+      transform: translateY(-12px);
+      box-shadow: $shadow-lg;
+    }
+
+    &.class-card-primary {
+      background: linear-gradient(135deg, rgba(176, 112, 140, 0.05), rgba(176, 112, 140, 0.1));
+      
+      &:hover {
+        border-color: $primary-color;
+      }
+    }
+
+    &.class-card-secondary {
+      background: linear-gradient(135deg, rgba(55, 149, 109, 0.05), rgba(55, 149, 109, 0.1));
+      
+      &:hover {
+        border-color: $secondary-color;
+      }
+    }
+
+    .MuiCardContent-root {
+      flex: 1;
+      padding: $spacing-md;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: $spacing-md;
+      gap: $spacing-sm;
+
+      .class-title {
+        font-family: $font-heading;
+        color: $neutral-dark;
+        font-size: 1.5rem;
+        font-weight: 600;
+        flex: 1;
+      }
+
+      .level-chip {
+        font-weight: 600;
+        font-size: 0.75rem;
+      }
+    }
+
+    .class-meta {
+      display: flex;
+      gap: $spacing-md;
+      margin-bottom: $spacing-md;
+      padding-bottom: $spacing-md;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+      .meta-item {
+        display: flex;
+        align-items: center;
+        gap: $spacing-xs;
+        color: $neutral-gray;
+
+        svg {
+          font-size: 1.125rem;
+        }
+
+        .MuiTypography-body2 {
+          font-size: 0.875rem;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .class-description {
+      color: $neutral-gray;
+      line-height: 1.7;
+      margin-bottom: $spacing-md;
+    }
+
+    .class-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $spacing-xs;
+
+      .feature-chip {
+        font-size: 0.75rem;
+        height: 24px;
+      }
+    }
+
+    .card-actions {
+      padding: $spacing-md;
+      padding-top: 0;
+
+      button {
+        border-radius: 25px;
+        padding: 10px 20px;
+        font-weight: 600;
+        text-transform: none;
+      }
+    }
+  }
+
+  .classes-cta {
+    text-align: center;
+    margin-top: $spacing-xl;
+    padding: $spacing-xl;
+    background: linear-gradient(135deg, $bg-primary, $bg-secondary);
+    border-radius: 20px;
+    box-shadow: $shadow-md;
+
+    h4 {
+      font-family: $font-heading;
+      color: $primary-color;
+      margin-bottom: $spacing-sm;
+      font-weight: 600;
+    }
+
+    .MuiTypography-body1 {
+      color: $neutral-gray;
+      margin-bottom: $spacing-md;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.05rem;
+    }
+
+    button {
+      margin-top: $spacing-sm;
+      padding: 12px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 30px;
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    .class-card {
+      .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    .classes-cta {
+      padding: $spacing-lg;
+      margin-top: $spacing-lg;
+    }
+  }
+}
+

@@ -1,0 +1,180 @@
+@import '../../styles/variables.scss';
+
+.contact-section {
+  background-color: $bg-white;
+
+  .contact-form-card {
+    border-radius: 20px;
+    box-shadow: $shadow-lg;
+    height: 100%;
+    background: linear-gradient(135deg, $bg-white, $bg-primary);
+
+    .MuiCardContent-root {
+      padding: $spacing-lg;
+    }
+
+    .form-title {
+      font-family: $font-heading;
+      color: $primary-color;
+      margin-bottom: $spacing-xs;
+      font-weight: 600;
+    }
+
+    .form-subtitle {
+      color: $neutral-gray;
+      margin-bottom: $spacing-md;
+    }
+
+    .contact-form {
+      .form-field {
+        margin-bottom: $spacing-md;
+
+        .MuiOutlinedInput-root {
+          background-color: white;
+          
+          &:hover fieldset {
+            border-color: $primary-color;
+          }
+
+          &.Mui-focused fieldset {
+            border-color: $primary-color;
+          }
+        }
+
+        .MuiInputLabel-root.Mui-focused {
+          color: $primary-color;
+        }
+      }
+
+      .submit-button {
+        margin-top: $spacing-sm;
+        padding: 14px 32px;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 30px;
+        text-transform: none;
+      }
+    }
+  }
+
+  .contact-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+
+    .contact-info-card {
+      border-radius: 16px;
+      transition: all $transition-normal;
+      border: 2px solid transparent;
+      background: linear-gradient(135deg, $bg-primary, $bg-secondary);
+
+      &:hover {
+        transform: translateX(8px);
+        box-shadow: $shadow-md;
+        border-color: $primary-light;
+      }
+
+      .info-content {
+        display: flex;
+        align-items: flex-start;
+        gap: $spacing-sm;
+        padding: $spacing-md;
+
+        .info-icon {
+          background: linear-gradient(135deg, $primary-color, $secondary-color);
+          color: white;
+          width: 50px;
+          height: 50px;
+          border-radius: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          box-shadow: $shadow-sm;
+
+          svg {
+            font-size: 1.5rem;
+          }
+        }
+
+        .info-details {
+          flex: 1;
+
+          .info-title {
+            font-family: $font-heading;
+            color: $neutral-dark;
+            font-weight: 600;
+            margin-bottom: $spacing-xs;
+            font-size: 1.125rem;
+          }
+
+          .info-text {
+            color: $neutral-gray;
+            line-height: 1.6;
+            font-size: 0.95rem;
+          }
+        }
+      }
+    }
+
+    .map-container {
+      margin-top: $spacing-sm;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: $shadow-md;
+
+      .map-placeholder {
+        aspect-ratio: 16/9;
+        background: linear-gradient(135deg, $primary-light, $secondary-light);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: $spacing-sm;
+
+        .map-icon {
+          font-size: 4rem;
+          color: white;
+          opacity: 0.8;
+        }
+
+        h6 {
+          font-family: $font-heading;
+          color: white;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    .contact-form-card {
+      margin-bottom: $spacing-md;
+
+      .MuiCardContent-root {
+        padding: $spacing-md;
+      }
+    }
+
+    .contact-info-container {
+      .contact-info-card {
+        &:hover {
+          transform: translateY(-4px);
+        }
+
+        .info-content {
+          padding: $spacing-sm;
+        }
+      }
+
+      .map-container {
+        .map-placeholder {
+          .map-icon {
+            font-size: 3rem;
+          }
+        }
+      }
+    }
+  }
+}
+
