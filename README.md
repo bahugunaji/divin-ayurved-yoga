@@ -1,5 +1,39 @@
 # Shri Shakti Divine Yoga 🧘‍♀️
 
+## Admin Login (Edit Testimonials and Classes)
+
+1) Start the servers
+
+```bash
+npm run server    # starts Express on http://localhost:4000
+npm run dev       # starts Vite on http://localhost:5173
+```
+
+2) Open the admin panel
+
+- Visit: http://localhost:5173/admin
+
+3) Login credentials (change these for security)
+
+- Default username: `admin`
+- Default password: `password`
+
+You can override via environment variables (recommended):
+
+```bash
+ADMIN_USER=your_username
+ADMIN_PASS=your_strong_password
+```
+
+Restart the server after changing env variables.
+
+4) Edit and save content
+
+- After login, switch between “Testimonials” and “Classes” tabs.
+- Edit the JSON and click Save. Public pages automatically fetch the latest data.
+
+Security note: This project uses an in-memory store and a simple token-based login suitable for local/demo use. For production, use a real database, HTTPS, hashed passwords, and persistent sessions or JWT with proper secrets.
+
 A beautiful, responsive yoga and wellness website built with modern web technologies.
 
 ## 🌟 Features

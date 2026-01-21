@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { 
   Box, 
   Container, 
@@ -16,7 +16,7 @@ import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import './Classes.scss'
 
 const Classes: React.FC = () => {
-  const classes = [
+  const fallbackClasses = [
     {
       title: 'Hatha Yoga',
       level: 'Beginner',
@@ -73,6 +73,24 @@ const Classes: React.FC = () => {
     },
   ]
 
+  const [classesData, setClassesData] = useState<typeof fallbackClasses>(fallbackClasses)
+
+  useEffect(() => {
+    let cancelled = false
+    ;(async () => {
+      try {
+        const res = await fetch('/api/classes')
+        const data = await res.json()
+        if (!cancelled && res.ok && data.ok && Array.isArray(data.items)) {
+          setClassesData(data.items)
+        }
+      } catch {
+        // keep fallback
+      }
+    })()
+    return () => { cancelled = true }
+  }, [])
+
   const getLevelColor = (level: string) => {
     switch (level) {
       case 'Beginner':
@@ -97,7 +115,7 @@ const Classes: React.FC = () => {
         </Box>
 
         <Grid container spacing={4}>
-          {classes.map((yogaClass, index) => (
+          {classesData.map((yogaClass, index) => (
             <Grid item xs={12} sm={6} lg={4} key={index}>
               <Card className={`class-card class-card-${yogaClass.color}`}>
                 <CardContent>

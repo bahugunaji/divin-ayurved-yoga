@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { 
   Box, 
   Container, 
@@ -13,7 +13,7 @@ import FormatQuoteIcon from '@mui/icons-material/FormatQuote'
 import './Testimonials.scss'
 
 const Testimonials: React.FC = () => {
-  const testimonials = [
+  const fallbackTestimonials = [
     {
       name: 'Charu Bhasin',
       role: 'Business Owner',
@@ -71,6 +71,24 @@ const Testimonials: React.FC = () => {
       color: '#dc7729',
     },
   ]
+
+  const [testimonials, setTestimonials] = useState<typeof fallbackTestimonials>(fallbackTestimonials)
+
+  useEffect(() => {
+    let cancelled = false
+    ;(async () => {
+      try {
+        const res = await fetch('/api/testimonials')
+        const data = await res.json()
+        if (!cancelled && res.ok && data.ok && Array.isArray(data.items)) {
+          setTestimonials(data.items)
+        }
+      } catch {
+        // keep fallback testimonials
+      }
+    })()
+    return () => { cancelled = true }
+  }, [])
 
   return (
     <section id="testimonials" className="testimonials-section section">

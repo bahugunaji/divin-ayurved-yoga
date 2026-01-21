@@ -50,6 +50,13 @@ const Contact: React.FC = () => {
       if (data.previewUrl) {
         // Open Ethereal preview when using fallback
         window.open(data.previewUrl, '_blank', 'noopener,noreferrer')
+      } else if (data.htmlContent) {
+        // Stream transport fallback: show HTML in a new tab
+        const newWin = window.open('', '_blank')
+        if (newWin) {
+          newWin.document.write(data.htmlContent)
+          newWin.document.close()
+        }
       }
       setOpenSnackbar(true)
       setFormData({
